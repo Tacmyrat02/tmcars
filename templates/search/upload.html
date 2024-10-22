@@ -1,0 +1,17 @@
+{% extends 'search/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Surat Arkaly_Haryt_Gözlegi</h1>
+    <p>Harydyň suratyny ýükle.</p>
+
+    <form action="{% url 'image_search' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="image">Suraty_saýla:</label>
+            <input type="file" class="form-control" id="image" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Gözle</button>
+    </form>
+</div>
+{% endblock %}
